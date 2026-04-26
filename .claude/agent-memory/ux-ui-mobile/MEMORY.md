@@ -1,0 +1,1 @@
+- [DinoDentis project context](project_dinodentis.md) — Stack, design system tokens, routing, and admin panel architecture for DinoDentis

@@ -32,6 +32,7 @@ export default function Testimonials() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
           {testimonials.map((testimonio, index) => (
             <TestimonialCard key={index} testimonio={testimonio} />
+          
           ))}
         </div>
       </div>
