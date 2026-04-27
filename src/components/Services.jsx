@@ -10,7 +10,7 @@ import { colors, styles } from "../styles/globals";
 
 export default function Services() {
   return (
-    <section id="servicios" style={{ ...styles.section, background: "#FFF0F8" }}>
+    <section id="servicios" style={{ ...styles.section, background: "#FFF0F8", position: "relative" }}>
       <div style={styles.container}>
 
         {/* ── Encabezado de sección ── */}
@@ -34,6 +34,26 @@ export default function Services() {
           ))}
         </div>
       </div>
+
+      {/* Dino decorativo - Carnotauro celeste */}
+      <img
+        src="/images/dino-carnotauro.png"
+        alt=""
+        aria-hidden="true"
+        className="float2 dino-section-deco"
+        style={{
+          position: "absolute",
+          top: 20,
+          left: "-10px",
+          width: 220,
+          height: 220,
+          objectFit: "contain",
+          mixBlendMode: "multiply",
+          opacity: 0.85,
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
     </section>
   );
 }

@@ -34,22 +34,24 @@ const Appointment = {
   // ── CREATE ─────────────────────────────────────────────────
   /**
    * Inserta una nueva cita en la base de datos.
-   * @param {Object} data - { nombre, telefono, fecha, servicio, mensaje }
+   * @param {Object} data - { nombre, telefono, fecha, hora, servicio, mensaje, email }
    * @returns {Promise<Object>} La cita recién creada con su id
    */
   async create(data) {
     const db = await getDb();
 
     const stmt = db.prepare(`
-      INSERT INTO appointments (nombre, telefono, fecha, servicio, mensaje)
-      VALUES (?, ?, ?, ?, ?)
+      INSERT INTO appointments (nombre, telefono, fecha, hora, servicio, mensaje, email)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
     stmt.run([
       data.nombre.trim(),
       data.telefono.trim(),
       data.fecha.trim(),
+      data.hora.trim(),
       data.servicio.trim(),
       (data.mensaje || "").trim(),
+      (data.email   || "").trim(),
     ]);
     stmt.free();
 

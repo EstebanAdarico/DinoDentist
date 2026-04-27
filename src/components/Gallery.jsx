@@ -10,7 +10,7 @@ import { colors, styles } from "../styles/globals";
 
 export default function Gallery() {
   return (
-    <section id="galeria" style={{ ...styles.section, background: colors.cream }}>
+    <section id="galeria" style={{ ...styles.section, background: colors.cream, position: "relative" }}>
       <div style={styles.container}>
 
         {/* ── Encabezado ── */}
@@ -44,6 +44,26 @@ export default function Gallery() {
           </a>
         </div>
       </div>
+
+      {/* Dino decorativo - Bebé en huevo */}
+      <img
+        src="/images/dino-gallery.png"
+        alt=""
+        aria-hidden="true"
+        className="float3 dino-section-deco"
+        style={{
+          position: "absolute",
+          top: 20,
+          right: "-10px",
+          width: 170,
+          height: 170,
+          objectFit: "contain",
+          mixBlendMode: "multiply",
+          opacity: 0.85,
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
     </section>
   );
 }

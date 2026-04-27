@@ -73,20 +73,19 @@ export default function Hero() {
 
         {/* Columna derecha: ilustración animada */}
         <div className="hero-image" style={{ flex: 1, display: "flex", justifyContent: "center", position: "relative" }}>
-          {/* Diente central flotante */}
-          <div
+          {/* Dino hero flotante */}
+          <img
+            src="/images/dino-hero.png"
+            alt="Dino amigable volando"
             className="float"
             style={{
-              width: 320, height: 320,
-              background: "linear-gradient(135deg, #FFD6E8, #FFE8F5)",
-              borderRadius: "60% 40% 60% 40%",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "8rem",
-              boxShadow: "0 20px 60px rgba(255,123,172,0.3)",
+              width: 340,
+              height: 340,
+              objectFit: "contain",
+              mixBlendMode: "multiply",
+              filter: "drop-shadow(0 20px 50px rgba(255,123,172,0.35))",
             }}
-          >
-            🦷
-          </div>
+          />
 
           {/* Burbuja "Sin dolor" */}
           <div className="float2" style={{

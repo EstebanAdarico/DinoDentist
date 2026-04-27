@@ -35,8 +35,19 @@ export default function Navbar() {
       }}>
 
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: "2rem" }}>🦖</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <img
+            src="/images/dino-services.png"
+            alt=""
+            aria-hidden="true"
+            style={{
+              width: 54,
+              height: 54,
+              objectFit: "contain",
+              mixBlendMode: "multiply",
+              flexShrink: 0,
+            }}
+          />
           <div>
             <div style={{ fontFamily: "'Baloo 2', cursive", fontWeight: 800, fontSize: "1.2rem", color: colors.pink, lineHeight: 1 }}>
               {doctora.nombre}

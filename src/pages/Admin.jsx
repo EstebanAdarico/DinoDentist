@@ -16,8 +16,8 @@ const SERVICIOS = [
   "Limpieza Dental",
   "Blanqueamiento",
   "Ortodoncia",
-  "Fluor",
-  "Revision Completa",
+  "Flúor",
+  "Revisión Completa",
   "Emergencias",
 ];
 

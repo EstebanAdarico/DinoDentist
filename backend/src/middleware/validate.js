@@ -81,6 +81,18 @@ const reglasCrearCita = [
       `El servicio debe ser uno de: ${SERVICIOS_VALIDOS.join(", ")}`
     ),
 
+  body("hora")
+    .trim()
+    .notEmpty().withMessage("La hora de la cita es obligatoria")
+    .matches(/^(0[8-9]|1[0-7]):[03]0$|^18:00$/).withMessage("Hora inválida. Elige entre 08:00 y 18:00 cada 30 minutos"),
+
+  body("email")
+    .optional({ checkFalsy: true })
+    .trim()
+    .isEmail().withMessage("El email no tiene un formato válido")
+    .isLength({ max: 150 }).withMessage("El email no puede superar 150 caracteres")
+    .normalizeEmail(),
+
   body("mensaje")
     .optional({ checkFalsy: true })
     .trim()

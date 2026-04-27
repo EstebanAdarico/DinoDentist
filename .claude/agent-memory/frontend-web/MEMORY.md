@@ -1,0 +1,1 @@
+- [DinoDentis — contexto del proyecto](project_dinodentis.md) — Stack React+Vite, sin Tailwind, inline styles con tokens en globals.js, contenido en content.js

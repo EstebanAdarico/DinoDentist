@@ -140,16 +140,17 @@ export const globalCSS = `
 
   /* Responsive - tablets y moviles */
   @media (max-width: 768px) {
-    .hide-mobile   { display: none !important; }
-    .mobile-only   { display: block !important; }
-    .services-grid { grid-template-columns: 1fr 1fr !important; }
-    .gallery-grid  { grid-template-columns: repeat(2, 1fr) !important; }
-    .contact-grid  { grid-template-columns: 1fr !important; }
-    .hero-grid     { flex-direction: column !important; text-align: center; }
-    .stats-row     { justify-content: center !important; }
-    .hero-buttons  { justify-content: center !important; }
-    .hero-image    { display: none !important; }
-    .hero-section  { min-height: auto !important; padding-top: 90px !important; padding-bottom: 50px !important; }
+    .hide-mobile       { display: none !important; }
+    .mobile-only       { display: block !important; }
+    .services-grid     { grid-template-columns: 1fr 1fr !important; }
+    .gallery-grid      { grid-template-columns: repeat(2, 1fr) !important; }
+    .contact-grid      { grid-template-columns: 1fr !important; }
+    .hero-grid         { flex-direction: column !important; text-align: center; }
+    .stats-row         { justify-content: center !important; }
+    .hero-buttons      { justify-content: center !important; }
+    .hero-image        { display: none !important; }
+    .hero-section      { min-height: auto !important; padding-top: 90px !important; padding-bottom: 50px !important; }
+    .dino-section-deco { display: none !important; }
   }
 
   /* Responsive - phones pequenos */
@@ -157,5 +158,38 @@ export const globalCSS = `
     .services-grid { grid-template-columns: 1fr !important; }
     .gallery-grid  { grid-template-columns: repeat(2, 1fr) !important; }
     .stats-row     { gap: 20px !important; }
+  }
+
+  /* ── Dinos decorativos de fondo ─────────────────────────── */
+  .dino-bg-left, .dino-bg-right {
+    position: fixed;
+    bottom: -40px;
+    width: 320px;
+    height: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.16;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  .dino-bg-left {
+    left: -40px;
+    background-image: url('/images/dino-bg-hero.png');
+    background-position: bottom left;
+    -webkit-mask-image: radial-gradient(ellipse 180% 180% at 0% 100%, black 20%, transparent 65%);
+    mask-image: radial-gradient(ellipse 180% 180% at 0% 100%, black 20%, transparent 65%);
+  }
+  .dino-bg-right {
+    right: -40px;
+    background-image: url('/images/dino-bg-section.png');
+    background-position: bottom right;
+    -webkit-mask-image: radial-gradient(ellipse 180% 180% at 100% 100%, black 20%, transparent 65%);
+    mask-image: radial-gradient(ellipse 180% 180% at 100% 100%, black 20%, transparent 65%);
+  }
+  @media (max-width: 768px) {
+    .dino-bg-left, .dino-bg-right { width: 200px; height: 200px; bottom: -25px; }
+    .dino-bg-left  { left: -25px; }
+    .dino-bg-right { right: -25px; }
   }
 `;

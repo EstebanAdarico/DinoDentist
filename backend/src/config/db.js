@@ -55,13 +55,24 @@ function getDb() {
         nombre      TEXT    NOT NULL,
         telefono    TEXT    NOT NULL,
         fecha       TEXT    NOT NULL,
+        hora        TEXT    NOT NULL DEFAULT '09:00',
         servicio    TEXT    NOT NULL,
         mensaje     TEXT    NOT NULL DEFAULT '',
+        email       TEXT    NOT NULL DEFAULT '',
         estado      TEXT    NOT NULL DEFAULT 'pendiente'
                     CHECK(estado IN ('pendiente','confirmada','cancelada')),
         created_at  TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))
       );
     `);
+
+    // Migración: agrega columnas nuevas si la tabla ya existía sin ellas.
+    // sql.js lanza error si la columna ya existe, así que usamos try/catch por cada ALTER.
+    try {
+      _db.run("ALTER TABLE appointments ADD COLUMN hora  TEXT NOT NULL DEFAULT '09:00'");
+    } catch (_) { /* columna ya existe, se ignora */ }
+    try {
+      _db.run("ALTER TABLE appointments ADD COLUMN email TEXT NOT NULL DEFAULT ''");
+    } catch (_) { /* columna ya existe, se ignora */ }
 
     // Persiste el estado inicial (o estructura creada) en disco
     _persistir();

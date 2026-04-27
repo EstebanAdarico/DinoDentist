@@ -50,6 +50,10 @@ export default function App() {
       {/* ── Estilos globales (animaciones, responsive, etc.) ── */}
       <style>{globalCSS}</style>
 
+      {/* ── Dinos decorativos fijos en las esquinas ── */}
+      <div className="dino-bg-left"  aria-hidden="true" />
+      <div className="dino-bg-right" aria-hidden="true" />
+
       <Routes>
         <Route path="/"      element={<Landing />} />
         <Route path="/admin" element={<Admin />} />

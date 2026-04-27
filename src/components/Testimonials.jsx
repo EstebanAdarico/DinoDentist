@@ -15,6 +15,7 @@ export default function Testimonials() {
       style={{
         ...styles.section,
         background: "linear-gradient(135deg, #FFF0F8, #F0FFF8)",
+        position: "relative",
       }}
     >
       <div style={styles.container}>
@@ -35,6 +36,26 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
+
+      {/* Dino decorativo - Spinosaurus amarillo */}
+      <img
+        src="/images/dino-testimonials.png"
+        alt=""
+        aria-hidden="true"
+        className="float2 dino-section-deco"
+        style={{
+          position: "absolute",
+          top: 20,
+          left: "-10px",
+          width: 200,
+          height: 200,
+          objectFit: "contain",
+          mixBlendMode: "multiply",
+          opacity: 0.85,
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
     </section>
   );
 }
