@@ -16,7 +16,7 @@ const cors      = require("cors");
 const morgan    = require("morgan");
 const rateLimit = require("express-rate-limit");
 
-// Importa las rutas
+// Importa las rutas desde mac 15 de agosto
 const appointmentRoutes = require("./src/routes/appointmentRoutes");
 
 const app  = express();
